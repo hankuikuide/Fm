@@ -1,0 +1,7 @@
+C:\hankk\Fm\Han.Fm.Model\bin\Debug\Han.Fm.Model.dll
+C:\hankk\Fm\Han.Fm.Model\bin\Debug\Han.Fm.Model.pdb
+C:\hankk\Fm\Han.Fm.Model\obj\Debug\Han.Fm.Model.dll
+C:\hankk\Fm\Han.Fm.Model\obj\Debug\Han.Fm.Model.pdb
+C:\hankk\Fm\Han.Fm.Model\bin\Debug\Han.DbLight.TableMetadata.dll
+C:\hankk\Fm\Han.Fm.Model\bin\Debug\Han.DbLight.TableMetadata.pdb
+C:\hankk\Fm\Han.Fm.Model\obj\Debug\Han.Fm.Model.csprojResolveAssemblyReference.cache

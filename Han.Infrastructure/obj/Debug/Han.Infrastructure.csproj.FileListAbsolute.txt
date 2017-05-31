@@ -1,0 +1,16 @@
+C:\hankk\Fm\Han.Infrastructure\obj\Debug\Han.Infrastructure.csprojResolveAssemblyReference.cache
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.Infrastructure.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.Infrastructure.pdb
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.Cache.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.EnsureThat.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.Log.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Newtonsoft.Json.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\NLog.dll
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.Cache.pdb
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.EnsureThat.pdb
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Han.Log.pdb
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\Newtonsoft.Json.xml
+C:\hankk\Fm\Han.Infrastructure\bin\Debug\NLog.xml
+C:\hankk\Fm\Han.Infrastructure\obj\Debug\Han.Infrastructure.dll
+C:\hankk\Fm\Han.Infrastructure\obj\Debug\Han.Infrastructure.pdb

@@ -1,0 +1,5 @@
+C:\hankk\Fm\Han.DbLight.TableMetadata\bin\Debug\Han.DbLight.TableMetadata.dll
+C:\hankk\Fm\Han.DbLight.TableMetadata\bin\Debug\Han.DbLight.TableMetadata.pdb
+C:\hankk\Fm\Han.DbLight.TableMetadata\obj\Debug\Han.DbLight.TableMetadata.dll
+C:\hankk\Fm\Han.DbLight.TableMetadata\obj\Debug\Han.DbLight.TableMetadata.pdb
+C:\hankk\Fm\Han.DbLight.TableMetadata\obj\Debug\Han.DbLight.TableMetadata.csprojResolveAssemblyReference.cache

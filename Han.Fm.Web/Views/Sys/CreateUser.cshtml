@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "创建用户";
+}
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb"><a href="/home/index" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a><a href="#" class="current">创建用户</a></div>
+        <h1>创建用户</h1>
+        <div class="container-fluid">
+            <hr />
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"><i class="icon-align-justify"></i></span>
+                            <h5>用户信息</h5>
+                        </div>
+                        <div class="widget-content nopadding">
+                            <form action="#" method="get" class="form-horizontal">
+                                <div class="control-group">
+                                    <label class="control-label">用户名：</label>
+                                    <div class="controls">
+                                        <input type="text" class="span11" placeholder="用户名" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">用户姓名：</label>
+                                    <div class="controls">
+                                        <input type="text" class="span11" placeholder="用户姓名" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">输入密码：</label>
+                                    <div class="controls">
+                                        <input type="password" class="span11" placeholder="输入密码" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">姓别：</label>
+                                    <div class="controls">
+                                        <select>
+                                            <option>男</option>
+                                            <option>女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">业务权限：</label>
+                                    <div class="controls">
+                                        <select multiple>
+                                            <option>审核</option>
+                                            <option selected>意见书</option>
+                                            <option>系统管理</option>
+                                            <option>其他菜单</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">用户类型：</label>
+                                    <div class="controls">
+                                        <label>
+                                            <input type="radio" name="radios" checked="checked" />
+                                            医保
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="radios" />
+                                            医院
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">分配角色</label>
+                                    <div class="controls">
+                                        <label>
+                                            <input type="checkbox" name="radios" />
+                                            管理员
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="radios" />
+                                            业务组长
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="radios" />
+                                            一般用户
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button id="user_save" type="submit" class="btn btn-success">保存</button>
+                                    <button type="submit" class="btn btn-primary">重置</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        var tbl = $('#user_list').dataTable({
+            /*
+             * sErrMode
+             * 错误信息显示方式
+             * 分别为alert和throw，默认为alert
+             */
+            "sErrMode": "throw",
+            /*
+             * sServerMethod
+             * 数据获取方式
+             * POST/GET，默认是GET
+             */
+            "sServerMethod": "POST",
+            /*
+             * bDeferRender
+             * 是否启用延迟加载：当你使用AJAX数据源时，可以提升速度。
+             * 默认为false
+             */
+            "bDeferRender": true,
+            /*
+             * sScrollXInner
+             * 表格宽度
+             */
+            "sScrollXInner": "100%",
+            "aLengthMenu": [10, 20, 30, 40, 50, 100],
+            /*
+             * bScrollCollapse
+             * 当显示的数据不足以支撑表格的默认的高度时，依然显示纵向的滚动条。(默认是false)
+             */
+            "bScrollCollapse": false,
+            "bServerSide": true,
+            "sAjaxSource": "sys/user/getUsers",      //mvc后台ajax调用接口。
+            /*
+             * bPaginate
+             * 是否开启分页,默认是true
+             */
+            'bPaginate': true,
+            /*
+             * bLengthChange
+             * 是否允许用户，在下拉列表自定义选择分页大小(10, 25, 50 and 100),需要分页支持
+             * 默认为true
+             */
+            "bLengthChange": true,
+            "iDisplayLength": 10,
+            "bProcessing": true,                    //当datatable获取数据时候是否显示正在处理提示信息。
+            /*
+             * bFilter
+             * 是否启用内置搜索功能：可以跨列搜索。
+             * 默认为true
+             */
+            "bFilter": true,
+            /*
+             * bSort
+             * 是否开启列排序功能，如果想禁用某一列排序，可以在每列设置使用bSortable参数
+             */
+            "bSort": true,
+            /*
+             * bInfo
+             * 是否显示表格相关信息：例如翻页信息等。
+             * 默认值：True
+             */
+            "bInfo": true,
+            /*
+             * bAutoWidth
+             * 是否启用自动适应列宽
+             * 默认值：True
+             */
+            "bAutoWidth": true,
+            /*
+             * sPaginationType
+             * 分页方式
+             * dataTable提供full_numbers和two_button，默认是two_button
+             * 这里采用的是自定义分页myPagination，详细参见jquery.dataTable.custom.js
+             */
+            'sPaginationType': 'full_numbers',      //分页样式
+            /*
+             * oLanguage
+             * 语言设置，dataTable默认为英文，可再此设置中文显示
+             * 注意：_MENU_、_START_、_END_、_TOTAL_、_MAX_等通配
+             */
+            "oLanguage": {
+                "sLengthMenu": "每页显示 _MENU_ 条记录",
+                "sZeroRecords": "对不起，没有匹配的数据",
+                "sInfo": "第 _START_ - _END_ 条 / 共 _TOTAL_ 条数据",
+                "sInfoEmpty": "没有匹配的数据",
+                "sInfoFiltered": "(数据表中共 _MAX_ 条记录)",
+                "sProcessing": "正在加载中...",
+                "sSearch": "全文搜索：",
+                "oPaginate": {
+                    "sFirst": "第一页",
+                    "sPrevious": " 上一页 ",
+                    "sNext": " 下一页 ",
+                    "sLast": " 最后一页 "
+                }
+            },
+            /*
+             * aoColumns
+             * 数据列
+             * mData  数据源属性
+             * sTitle 列头
+             * bSortable 是否参与排序
+             * mRender 自定义显示内容，可返回html、字符串
+             */
+            "aoColumns": [
+                    { "mData": "Id" },
+                    { "mData": "Code" },
+                    { "mData": "Name" },
+                    {
+                        "mData": "LastPasswordUpdate",
+                        "mRender": function (data, type, row) {
+                            if (data) {
+                                return new Date(parseInt(data.substr(6))).toLocaleString();
+                            }
+                        }
+                    },
+                    {
+                        "mData": "LastUpdateTime",
+                        "mRender": function (data, type, row) {
+                            if (data) {
+                                return new Date(parseInt(data.substr(6))).toLocaleString();
+                            }
+                            return "";
+                        },
+                        "defaultContent": ""
+                    },
+                    {
+                        "mData": "EnableFlag",
+                        "mRender": function (data, type, row) {
+                            return data === 1 ? '启用' : '禁用';
+                        }
+                    },
+                    {
+                        "mData": null,
+                        "mRender": function (data, type, row) {
+                            return '<div class="fr"><a href="sys/user/createuser" class="btn btn-success btn-mini"> Edit </a>  <a href="#" class="btn btn-danger btn-mini">Delete</a></div>';
+                        }
+                    }
+            ],
+            /*
+             * fnInitComplete
+             * 表格初始化完成后的回调
+             */
+            "fnInitComplete": function () {
+            },
+            /*
+             * fnDrawCallback
+             * 表格绘制完成后的回调
+             */
+            "fnDrawCallback": function () {
+
+            },
+        });
+
+        $('#user_save').click(function () {
+            $.gritter.add({
+                title: '用户信息',
+                text: '保存成功',
+                image: '/img/demo/envelope.png',
+                position: 'bottom-right',
+                time: 1000,
+                class_name: 'gritter-success', //gritter-center
+                sticky: false
+            });
+        });
+    </script>
+
+}

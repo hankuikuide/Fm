@@ -1,0 +1,51 @@
+﻿{
+  "AppSettings": {
+    "AppName": "FmApp",
+    //集成管理平台标题
+    "AppTitle": "中公网集成管理系统",
+    "IsDev": "1",
+    "DefaultMenuId": "0",
+    "Theme": "all",
+    "AjaxTimeOut": "900000",
+    //0：:不限用户类型登录；1：医保用户可登录；2：医院用户可登录
+    "LoginUserType": "0"
+  },
+  "SsoApp": {
+    //APP集成界面标题
+    "AppTitle": "医保综合服务平台",
+    //APP集成界面logo
+    "Logo": "/media/image/logo/list-logo.png"
+  },
+  "Fm": {
+    //单点登录连接串
+    //"DbConn": "Data Source= (DESCRIPTION =     (ADDRESS_LIST =       (ADDRESS = (PROTOCOL = TCP)(HOST = 10.117.130.29)(PORT = 1521))     )     (CONNECT_DATA =       (SERVICE_NAME = ora29a)     )   );User ID=bmifm;Password=bmifm",
+    "DbConn": "Server=localhost;Database=shenghedb;Uid=bmifm;Pwd=bmifm;",
+    //集成管理平台连接串（这里同 DbConn）
+    "AppDbConn": "APVEGXCkHEVlMeM/NtYZY+Sakp6n11L9ViXYmEP4X0iFvowJWtrFCmglj94IHwLlR/bqC+bzhzw+Dv/mCstj0scxqkLHvjVOTy61lyf7IfvAUl+B12Hm51jQ/QYqbpgW0tToNcFGROjKhv2p3gi4WhgsVt12XUgY7qFelENi7eoQZaISM/Wv/ntwBIK0f6OdYpmiZWdHoG/w4c95kkZI/38uj222ScEpzHqPOLGIGhiyRtOeB4fPG1Q09Jqk9VYPQmHCcPdilrUxQviISQvkOEi5hkR/NgbgxHGQLTQw/Xo=",
+    "AppKey": "0",
+    //登录页面
+    "LoginUrl": "~/login",
+    //退出页面
+    "LoginOutUrl": "~/loginout",
+    "CookieStartWith": "fm-",
+    "Sso": {
+      "AesKey": "C50B3C89CB21F4F1422FF158A5B42D0E8DB8CB5CDA1742572A487D9401E3400267682B202B746511891C1BAF47F8D25C07F6C39A104696DB51F17C529AD3CABE"
+    },
+    "AllowReferrerHost": {
+      "1": "localhost",
+      "2": "10.117.130.150"
+    },
+    "AppNameInfo": {
+      //登录界面默认标题
+      "_default": "医保综合服务平台",
+      //集成管理平台跳转登录界面显示标题
+      "/home/index": "中公网集成管理系统"
+    },
+    "AppIcoInfo": {
+      //登录界面默认logo
+      "_default": "/media/image/logo/list-logo.png",
+      //集成管理平台跳转登录界面显示logo
+      "/home/index": "/images/login-logo02.png"
+    }
+  }
+}

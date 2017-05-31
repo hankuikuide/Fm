@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新版本审核系统-登录</title>
+    <link href="~/css/login-style.css" rel="stylesheet" />
+    <link href="~/FmContent/css/FontAwesome/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <p style="height:120px"></p>
+    <div class="login-form">
+
+        <div class="login-form-title">
+            <img id="imLogo" src="~/media/image/logo/list-logo.png" style="width:64px;height:64px;margin-right:15px;" align="top"/><span id="spanTitle">医保综合服务平台</span>
+        </div>
+
+        <div class="login-form-content" id="login-form">
+            <div class="login-form-list">
+                <i class="fa fa-user"></i><input type="text" class="login-text" placeholder="用户名" id="txtName" />
+            </div>
+            <div class="login-form-list">
+                <i class="fa fa-lock"></i><input type="password" class="login-text" placeholder="密码" id="txtPwd" />
+            </div>
+            <div class="login-form-list" style="background:none; margin-top:30px; height:20px">
+                <label class="login-remUser">
+                    <input type="checkbox" id="isSave" />
+                    <span>记住用户名</span>
+                </label>
+            </div>
+            <div class="login-form-list">
+                <input type="button" class="login-but" id="btnLogin" value="登录" />
+            </div>
+        </div>
+    </div>
+    <div id="login-copyright" class="login-copyright">
+        版权所有：中公网医疗信息技术有限公司
+    </div>
+    <script src="~/FmContent/lib/jqurey/jquery.js"></script>
+    <script type="text/javascript">
+
+        function submit() {
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/Account/LoginOn",
+                data: { UserName: 'aa', UserPwd: 'bb' },
+                dataType: 'json',
+                beforeSend: function () {
+                    //loader.show();
+                    //showMsg('正在登录');
+                },
+                success: function(x) {
+                    if (x.IsSuccess) {
+                        window.location.href = "http://localhost:10321/"
+                    }
+                },
+                error: function () {
+                    alert('登录出错了...');
+                }
+
+            });
+        }
+
+        $("#btnLogin").click(function() {
+            submit();
+        });
+
+        $("#txtName,#txtPwd").keydown(function (e) {
+            if (e.keyCode === 13) {
+                submit();
+            }
+        });
+    </script>
+</body>
+</html>
